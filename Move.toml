@@ -1,0 +1,12 @@
+[package]
+name = 'personal-data'
+version = '1.0.0'
+
+
+[addresses]
+token_vesting = "_"
+Std = "0x1"
+aptos_std = "0x1"
+
+[dependencies]
+AptosFramework = { local = "C:/Users/acer/Downloads/aptos-NFT/aptos-core/aptos-move/framework/aptos-framework}
