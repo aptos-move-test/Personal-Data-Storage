@@ -1,4 +1,4 @@
-module personal_data::data{
+module personal_data::DataStore{
     use std::signer;    
     use aptos_framework::account;
     use std::vector;
@@ -48,7 +48,7 @@ module personal_data::data{
         phone_number: vector<u8>
     ): bool {
         let sender_address = Signer::address_of(signer);
-        let personal_data = PersonalData {
+        let personal_data = DataStore {
             name: name,
             age: age,
             email: email,
@@ -58,13 +58,14 @@ module personal_data::data{
         true
     }
 
-        public fun get_personal_data(
+    public fun get_personal_data(
         address: address
-    ): PersonalData {
-        assert(exists<PersonalData>(address), 1);
-        let personal_data: PersonalData = move_from(address);
+    ): DataStore {
+        assert!(exists<DataStore>(address), 1);
+        let personal_data: DataStore = move_from(address);
         personal_data
     }
+
         // Get a Person object from the PersonalDataStore
         // public fun get_person(store: &PersonalDataStore, person_address: address): Option<Person> {
         //     for (i, (addr, person)) in store.data.iter().enumerate() {
