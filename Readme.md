@@ -6,7 +6,11 @@ The existing centralized `Web 2.0` encounters key concerns like vending **person
 
 # **Digital Identity:**
 
-A digital identity arises organically from the use of personal information on the web and from the shadow data created by the individual’s actions online. A digital identity may be a pseudonymous profile linked to the device’s IP address, such as a randomly generated unique ID. Data points that can help form a digital identity include usernames and passwords, driver’s license numbers, online purchasing history, date of birth, online search activities, medical history, etc. Biometrics, Behavioral, and Biographic are models that make up a person’s identity. ([ConsenSys](https://consensys.net/blockchain-use-cases/digital-identity/))
+Digital is a term that has become ubiquitous in our lives, referring to anything that involves or is related to computers, electronic devices, or the internet. The digital world has brought with it many benefits, such as faster communication, easier access to information, and increased productivity. However, it has also brought new challenges, particularly in the realm of personal data storage and security.
+
+Another important concept related to digital is digital identity. A digital identity arises organically from the use of personal information on the web and from the shadow data created by the individual’s actions online. A digital identity may be a pseudonymous profile linked to the device’s IP address, such as a randomly generated unique ID. Data points that can help form a digital identity include usernames and passwords, driver’s license numbers, online purchasing history, date of birth, online search activities, medical history, etc. Biometrics, Behavioral, and Biographic are models that make up a person’s identity.
+
+
 
 
 
