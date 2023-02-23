@@ -13,7 +13,7 @@ module personal_data::DataStore{
         age: u8,
         email: vector<u8>,
         phone_number: vector<u8>,  
-        resource_cap: account::SignerCapability, // Signer
+        // resource_cap: account::SignerCapability, // Signer
     }
 
     //Map to store seed and corresponding resource account address
