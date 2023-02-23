@@ -1,4 +1,4 @@
-module personal_data::data{
+module personal_data::DataStore{
     use std::signer;    
     use aptos_framework::account;
     use std::vector;
@@ -21,31 +21,50 @@ module personal_data::data{
         DataMap: SimpleMap< vector<u8>,address>,
     }
 
-     //Functions    
-    public entry fun add_info(
-        account: &signer,
-        person_address: address,
+    //  //Functions    
+    // public entry fun add_info(
+    //     account: &signer,
+    //     person_address: address,
+    //     name: vector<u8>,
+    //     age: u8,
+    //     email: vector<u8>,
+    //     phone_number: vector<u8>,
+    //     seeds: vector<u8>
+    // )acquires DataCap {
+        // let account_addr = signer::address_of(account);
+        // let (data, data_cap) = account::create_resource_account(account, seeds); //resource account
+        // let data_address = signer::address_of(&data);
+        // if (!exists<DataCap>(account_addr)) {
+        //     move_to(account, DataCap { dataMap: simple_map::create() })
+        // };
+        // let maps = borrow_global_mut<DataCap>(account_addr);
+        // simple_map::add(&mut maps.dataMap, seeds,data_address);
+        // let data_signer_from_cap = account::create_signer_with_capability(&data_cap);
+    public fun add_personal_data(
+        signer: &signer,
         name: vector<u8>,
         age: u8,
         email: vector<u8>,
-        phone_number: vector<u8>,
-        seeds: vector<u8>
-    )acquires DataCap {
-         let account_addr = signer::address_of(account);
-        let (data, data_cap) = account::create_resource_account(account, seeds); //resource account
-        let data_address = signer::address_of(&data);
-        if (!exists<DataCap>(account_addr)) {
-            move_to(account, DataCap { dataMap: simple_map::create() })
-        };
-        let maps = borrow_global_mut<DataCap>(account_addr);
-        simple_map::add(&mut maps.dataMap, seeds,data_address);
-        let data_signer_from_cap = account::create_signer_with_capability(&data_cap);
-        let person = Person {
+        phone_number: vector<u8>
+    ): bool {
+        let sender_address = Signer::address_of(signer);
+        let personal_data = DataStore {
             name: name,
             age: age,
             email: email,
             phone_number: phone_number
         };
+        move_to(sender_address, personal_data);
+        true
+    }
+
+    public fun get_personal_data(
+        address: address
+    ): DataStore {
+        assert!(exists<DataStore>(address), 1);
+        let personal_data: DataStore = move_from(address);
+        personal_data
+    }
 
         // Get a Person object from the PersonalDataStore
         // public fun get_person(store: &PersonalDataStore, person_address: address): Option<Person> {
@@ -56,7 +75,7 @@ module personal_data::data{
         //     }
         // }
 
-    }
+    // }
 
 
 }
