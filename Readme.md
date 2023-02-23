@@ -4,6 +4,9 @@
 
 The existing centralized `Web 2.0` encounters key concerns like vending **personal data** to third parties, identity theft, mixing of passwords and usernames, and more. So, it can’t deploy a **self-sovereign identity (SSI)** for the users. However, **blockchain** can provide users with comprehensive control of their information in their ID and digital identities. So, Personal Identity Security is one of those use cases of blockchain that paves the way for SSI. ([upgrad](https://www.upgrad.com/blog/blockchain-technology-use-cases/))
 
+# **Digital Identity:**
+
+A digital identity arises organically from the use of personal information on the web and from the shadow data created by the individual’s actions online. A digital identity may be a pseudonymous profile linked to the device’s IP address, such as a randomly generated unique ID. Data points that can help form a digital identity include usernames and passwords, driver’s license numbers, online purchasing history, date of birth, online search activities, medical history, etc. Biometrics, Behavioral, and Biographic are models that make up a person’s identity. (C[onsenSys](https://consensys.net/blockchain-use-cases/digital-identity/))
 
 
 
