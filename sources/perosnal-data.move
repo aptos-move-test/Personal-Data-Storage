@@ -40,6 +40,8 @@ module personal_data::DataStore{
         // let maps = borrow_global_mut<DataCap>(account_addr);
         // simple_map::add(&mut maps.dataMap, seeds,data_address);
         // let data_signer_from_cap = account::create_signer_with_capability(&data_cap);
+    
+    //Asks to enter the information and stores the data
     public fun add_personal_data(
         signer: &signer,
         name: vector<u8>,
@@ -58,6 +60,7 @@ module personal_data::DataStore{
         true
     }
 
+    //returnes user data when address is provided
     public fun get_personal_data(
         address: address
     ): DataStore {
@@ -66,8 +69,21 @@ module personal_data::DataStore{
         personal_data
     }
 
-        // Get a Person object from the PersonalDataStore
-        // public fun get_person(store: &PersonalDataStore, person_address: address): Option<Person> {
+    //Checks user data whether its accurate or not
+    // public fun validate_personal_data(
+    //     address: address
+    // ): DataStore {
+    //     assert!(exists<DataStore>(address), 1);
+
+    // }
+
+    //provides a public key that can be used for sharing information
+    // public fun get_Share_Key(
+
+    // )
+
+    // Get a Person object from the PersonalDataStore
+    // public fun get_person(store: &PersonalDataStore, person_address: address): Option<Person> {
         //     for (i, (addr, person)) in store.data.iter().enumerate() {
         //         if addr == &person_address {
         //             return Some(person);
